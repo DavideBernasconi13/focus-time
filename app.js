@@ -1,10 +1,17 @@
 /* seleziono gli elementi */
 let taskText = document.getElementById('task-text');
-console.log(taskText);
 let taskBtn = document.getElementById('add-task-btn');
+let taskListItem = document.getElementById('task-list-item');
+console.log(taskListItem);
 
-/*stampa in console il testo al premere del bottone */
+/* prendi il testo del task e aggiungilo alla lista dei task */
 taskBtn.addEventListener('click', () => {
-    console.log(taskText.value);
+    let taskAdd = taskText.value;
+    let el = document.createElement('li');
+    el.classList.add("list-group-item");
+    el.textContent = taskAdd;
+    taskListItem.appendChild(el);
+    // pulisci l'input dei task
     taskText.value = "";
+
 }) 
